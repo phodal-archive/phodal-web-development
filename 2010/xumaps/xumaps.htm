@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>2D Wenli By Mokcy</title>
+    <link href="css/xumaps.css" rel="Stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.all.js"></script>
+    <script type="text/javascript" src="js/jquery.jgrowl.js"></script>
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+    <link rel="stylesheet" href="css/jquery.jgrowl.css" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#aa1').click(function(){
+				$('#mm').menu('show',{
+					left:100,
+					top:200
+				});
+			});
+			$('#aa2').click(function(){
+				$('#mm').menu('hide');
+			});
+			$(document).bind('contextmenu',function(e){
+				$('#mm').menu('show', {
+					left: e.pageX,
+					top: e.pageY
+				});
+				return false;
+			});
+		});
+	</script>
+   <style type="text/css">
+               div.jGrowl div.smoke {
+				background: url(images/smoke.png) no-repeat;
+				-moz-border-radius: 	0px;
+				-webkit-border-radius:	0px;
+				width: 					280px;
+				height: 				55px;
+				overflow: 				hidden;
+		}
+    </style>
+    <script type="text/javascript">
+
+		// In case you don't have firebug...
+		if (!window.console || !console.firebug) {
+			var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
+			window.console = {};
+			for (var i = 0; i < names.length; ++i) window.console[names[i]] = function() {};
+		}
+
+		(function($){
+
+			$(document).ready(function(){
+				// This value can be true, false or a function to be used as a callback when the closer is clciked
+				$.jGrowl.defaults.closer = function() {
+					console.log("Closing everything!", this);
+				};
+				
+				// A callback for logging notifications.
+				$.jGrowl.defaults.log = function(e,m,o) {
+					$('#logs').append("<div><strong>#" + $(e).attr('id') + "</strong> <em>" + (new Date()).getTime() + "</em>: " + m + " (" + o.theme + ")</div>")
+				}				
+				
+				$.jGrowl("当前仅作测试用.", { life: 1000 });
+				$.jGrowl("墨颀荣誉出品", { header: 'Mocky.com', sticky: true });
+				
+				$('#test1').jGrowl("移动鼠标到你所感兴趣的地方，在连接的框框上获取更详细的资料及图片(明德楼、南门、校徽、后街、图书馆当前可用)", {
+					closer: false,
+					sticky: true, 
+					glue: 'before',
+					speed: 2000,
+					easing: 'easeInOutElastic',
+					animateOpen: { 
+						height: "show",
+						width: "show"
+					},
+					animateClose: { 
+						height: "hide",
+						width: "show"
+					}
+				});
+
+				$('#test1').jGrowl("欢迎......", { 
+					glue: 'before',
+					speed: 2000,
+					easing: 'easeInOutExpo',
+					animateOpen: { 
+						height: "show",
+						width: "show"
+					},
+					animateClose: { 
+						height: "hide",
+						width: "show"
+					}
+				});
+				
+			});
+		})(jQuery);
+
+		</script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$("a[rel=example_group]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+                        $("a[rel=mingde]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+                        $("a[rel=playground]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+                        $("a[rel=orange]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+                        $("a[rel=backstreet]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+                });
+	</script>
+</head>
+<body>
+<div id="mm" class="easyui-menu" style="width:120px;">
+		<div onclick="javascript:alert('正在开发')">雪景</div>
+		<div onclick="javascript:alert('正在开发')">3D模式</div>
+		<div>
+			<span>打开</span>
+			<div style="width:150px;">
+<div href="http://www.mocky.com">首页</div>
+<div><a href="#">.....</a></div>
+			</div>
+		</div>
+		<div class="menu-sep"></div>
+		<div onclick="javascript:window.close();">离开</div>
+	</div>
+<div id="box" class="search">
+    <span id="spbox1" class="spbox"><span></span></span>
+    <a id="a_ct1" class="a_ct" rel="example_group" href="building/library.jpg" title="学校图书馆">
+       <p>学校图书馆</p>
+       <span class="sp_ask">大图？</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox1" class="ctbox"><div></div></div>
+    
+    <span id="spbox2" class="spbox"><span></span></span>
+    <a id="a_ct2" class="a_ct" rel="example_group" href="building/logo.jpg" title="学校校徽">
+       <p>学校校徽</p>
+       <span class="sp_ask">大图？</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox2" class="ctbox"><div></div></div>
+
+    <span id="spbox3" class="spbox"><span></span></span>
+    <a id="a_ct3" class="a_ct" rel="mingde" href="building/mingde.jpg" title="明德楼">
+       <p>明德楼</p>
+       <span class="sp_ask">更多详情？</span>
+       <span class="sp_go">»</span>    
+    </a>
+    <div id="ctbox3" class="ctbox"><div></div>
+    <a rel="mingde" href="building/mingde/1.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/2.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/3.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/4.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/5.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/6.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/7.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/8.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/9.jpg"  title=""></a>
+    <a rel="mingde" href="building/mingde/10.jpg" title=""></a>
+    <a rel="mingde" href="building/mingde/11.jpg" title=""></a>
+    <a rel="mingde" href="building/mingde/12.jpg" title=""></a>
+    <a rel="mingde" href="building/mingde/13.jpg" title=""></a>
+    <a rel="mingde" href="building/mingde/14.jpg" title=""></a>
+    <a rel="mingde" href="building/mingde/15.jpg" title=""></a>
+    <a rel="mingde" href="building/mingde/16.jpg" title=""></a>
+</div>
+     <div id="test1" class="top-left"></div>
+    <span id="spbox4" class="spbox"><span></span></span>
+    <a id="a_ct4" class="a_ct" rel="playground" href="building/playground.jpg" title="旧操场">
+       <p>旧操场</p>
+       <span class="sp_ask">更多？</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox4" class="ctbox"><div></div>
+    <a rel="playground" href="building/playground/1.jpg"  title=""></a>
+    <a rel="playground" href="building/playground/2.jpg"  title=""></a>
+    <a rel="playground" href="building/playground/3.jpg"  title=""></a>
+</div>
+
+    <span id="spbox5" class="spbox"><span></span></span>
+    <a id="a_ct5" rel="example_group" href="building/southgates.jpg" class="a_ct" title="文理南门">
+       <p>西安文理学院南门</p>
+       <span class="sp_ask">大图？</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox5" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox6" class="spbox"><span></span></span>
+    <a id="a_ct6" rel="orange" href="building/orange.jpg" class="a_ct" title="文理四月天">
+       <p>文理四月天 by 桔子</p>
+       <span class="sp_ask">更多？</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox6" class="ctbox"><div></div>
+    <a rel="orange" href="building/orange/1.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/2.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/3.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/4.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/5.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/6.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/7.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/8.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/9.jpg"   title=""></a>
+    <a rel="orange" href="building/orange/10.jpg"  title=""></a>
+    <a rel="orange" href="building/orange/11.jpg"  title=""></a>
+    <a rel="orange" href="building/orange/12.jpg"  title=""></a>
+    <a rel="orange" href="building/orange/13.jpg"  title=""></a>
+    <a rel="orange" href="building/orange/14.jpg"  title=""></a>
+    <a rel="orange" href="building/orange/15.jpg"  title=""></a>
+    <a rel="orange" href="building/orange/16.jpg"  title=""></a>
+</div>
+
+    <span id="spbox7" class="spbox"><span></span></span>
+    <a id="a_ct7" rel="backstreet" href="building/backstreet/11.jpg"  class="a_ct" title="后街">
+       <p>后街</p>
+       <span class="sp_ask">大图？</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox7" class="ctbox"><div></div>
+    <a rel="backstreet" href="building/backstreet/1.jpg"   title=""></a>
+    <a rel="backstreet" href="building/backstreet/2.jpg"   title=""></a>
+    <a rel="backstreet" href="building/backstreet/3.jpg"   title=""></a>
+    <a rel="backstreet" href="building/backstreet/4.jpg"   title=""></a>
+    <a rel="backstreet" href="building/backstreet/5.jpg"   title=""></a>
+    <a rel="backstreet" href="building/backstreet/6.jpg"   title=""></a>
+    <a rel="backstreet" href="building/backstreet/7.jpg"   title=""></a>
+    <a rel="backstreet" href="building/backstreet/8.jpg"   title=""></a>
+</div>
+
+    <span id="spbox8" class="spbox"><span></span></span>
+    <a id="a_ct8" rel="" href="" class="a_ct" title="">
+       <p>医务室....</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox8" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox9" class="spbox"><span></span></span>
+    <a id="a_ct9" rel="" href="" class="a_ct" title="">
+       <p>后勤集团</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox9" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox10" class="spbox"><span></span></span>
+    <a id="a_ct10" rel="" href="" class="a_ct" title="">
+       <p>开水房</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox10" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox11" class="spbox"><span></span></span>
+    <a id="a_ct11" rel="" href="" class="a_ct" title="">
+       <p>餐厅</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox11" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox12" class="spbox"><span></span></span>
+    <a id="a_ct12" rel="" href="" class="a_ct" title="">
+       <p>体育馆</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox12" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox13" class="spbox"><span></span></span>
+    <a id="a_ct13" rel="" href="" class="a_ct" title="">
+       <p>网球场</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox13" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox14" class="spbox"><span></span></span>
+    <a id="a_ct14" rel="" href="" class="a_ct" title="">
+       <p>社联、青协</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox14" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox15" class="spbox"><span></span></span>
+    <a id="a_ct15" rel="" href="" class="a_ct" title="">
+       <p>大礼堂</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox15" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox16" class="spbox"><span></span></span>
+    <a id="a_ct16" rel="" href="" class="a_ct" title="">
+       <p>办公楼(行政楼)</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox16" class="ctbox"><div></div>
+</div>
+
+
+    <span id="spbox17" class="spbox"><span></span></span>
+    <a id="a_ct17" rel="" href="" class="a_ct" title="">
+       <p>多媒体楼</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox17" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox18" class="spbox"><span></span></span>
+    <a id="a_ct18" rel="" href="" class="a_ct" title="">
+       <p>北门</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox18" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox19" class="spbox"><span></span></span>
+    <a id="a_ct19" rel="" href="" class="a_ct" title="">
+       <p>东门</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox19" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox20" class="spbox"><span></span></span>
+    <a id="a_ct20" rel="" href="" class="a_ct" title="">
+       <p>游泳池</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox20" class="ctbox"><div></div>
+</div>
+
+
+    <span id="spbox21" class="spbox"><span></span></span>
+    <a id="a_ct21" rel="" href="" class="a_ct" title="">
+       <p>体操馆</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox21" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox22" class="spbox"><span></span></span>
+    <a id="a_ct22" rel="" href="" class="a_ct" title="">
+       <p>弘文楼</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox22" class="ctbox"><div></div>
+</div>
+
+
+    <span id="spbox23" class="spbox"><span></span></span>
+    <a id="a_ct23" rel="" href="" class="a_ct" title="">
+       <p>致理楼</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox23" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox24" class="spbox"><span></span></span>
+    <a id="a_ct24" rel="" href="" class="a_ct" title="">
+       <p>六号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox24" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox25" class="spbox"><span></span></span>
+    <a id="a_ct25" rel="" href="" class="a_ct" title="">
+       <p>五号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox25" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox26" class="spbox"><span></span></span>
+    <a id="a_ct26" rel="" href="" class="a_ct" title="">
+       <p>二号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox26" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox27" class="spbox"><span></span></span>
+    <a id="a_ct27" rel="" href="" class="a_ct" title="">
+       <p>一号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox27" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox28" class="spbox"><span></span></span>
+    <a id="a_ct28" rel="" href="" class="a_ct" title="">
+       <p>三号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox28" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox29" class="spbox"><span></span></span>
+    <a id="a_ct29" rel="" href="" class="a_ct" title="">
+       <p>四号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox29" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox30" class="spbox"><span></span></span>
+    <a id="a_ct30" rel="" href="" class="a_ct" title="">
+       <p>七号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox30" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox31" class="spbox"><span></span></span>
+    <a id="a_ct31" rel="" href="" class="a_ct" title="">
+       <p>九号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox31" class="ctbox"><div></div>
+</div>
+
+    <span id="spbox32" class="spbox"><span></span></span>
+    <a id="a_ct32" rel="" href="" class="a_ct" title="">
+       <p>八号公寓</p>
+       <span class="sp_ask">暂无详细资料</span>
+       <span class="sp_go">»</span>
+    </a>
+    <div id="ctbox32" class="ctbox"><div></div>
+</div>
+
+    <script language="javascript" type="text/javascript">
+     var _isie=!!document.all;
+     var _d=document;
+     var _$=function(eleid){
+        return (typeof eleid=='object')?eleid:(_d.getElementById(eleid)?_d.getElementById(eleid):null);
+     }
+     var _box=_$("box"),_btn=_$("btn");
+     
+     var _r=100;//范围半径
+     var _minr=20;//小矩形半径
+     var _spboxs=[];//保存活动点信息
+     var _flag=false;//标志是否执行#box的mousemove绑定函数
+    
+     var bindHoverBox=function(){
+        $("#box").bind("mousemove",function(event){
+            event=!_isie?event:(window.event?window.event:null);
+            var x,y;
+            var sleft,stop;
+            
+            //兼容ie,chrome;opera safari moz
+            sleft=(_isie||/chrome/.test(window.navigator.userAgent.toLowerCase()))?document.body.scrollLeft:document.documentElement.scrollLeft;
+            stop=(_isie||/chrome/.test(window.navigator.userAgent.toLowerCase()))?document.body.scrollTop:document.documentElement.scrollTop;
+            
+            x = _isie ?event.x : (event.clientX+sleft-_box.offsetLeft); 
+            y = _isie ?event.y : (event.clientY+stop-_box.offsetTop);
+
+            x=(isNaN(x))?0:x;
+            y=(isNaN(y))?0:y;
+            if(!_flag){
+                for(var i=0;i<_spboxs.length;i++){
+                    if(ifShow(x,y,_spboxs[i])){
+                        _spboxs[i].qel.stop().fadeTo(30,0.6);
+                        //bindHover(_spboxs[i].qel);
+                    }else{
+                        _spboxs[i].qel.stop().fadeOut(50);
+                    }
+                }
+            }
+        });
+     };
+     //初始化中心点位置
+     var initCenter=function(){
+        var obj;
+        $(".spbox").each(function(){
+            obj=new Object();
+            obj.qel=$(this);
+           // obj.nel=$(this).next(".a_ct");
+            obj.p=$(this).position();
+            obj.x=$(this).position().left+_minr;
+            obj.y=$(this).position().top+_minr;
+            _spboxs.push(obj);
+            
+            //绑定
+            bindHover(obj.qel);
+            bindCtHover(obj.qel); 
+            
+            $(this).fadeOut();
+        });
+     };
+     //判断是否在触发范围内
+     var ifShow=function(x,y,box){
+        var r1=Math.abs(x-box.x);
+        var r2=Math.abs(y-box.y);
+        
+       // _btn.value=r1+"#|"+r2;//debugline
+        
+        if(r1<_r&&r2<_r){
+            return true;
+        }else{
+            return false;
+        }
+     }; 
+     //绑定小box
+     function bindHover(obj){
+         obj.hover(function(){
+            $(this).next().next().stop().fadeTo(100,0.6,function(){
+                $(this).prev().stop().fadeTo(150,1);
+            });
+         },
+         function(){
+            $(this).next().stop().fadeOut(150);
+            $(this).next().next().stop().fadeOut(150);
+         });
+     }
+     //绑定内容背景
+     function bindCtHover(obj){
+        obj.next().bind("mousemove",function(){
+            $(this).stop().fadeTo(10,1);
+            $(this).next().stop().fadeTo(10,0.6);
+            $(this).prev().stop().fadeTo(10,0.6);
+            _flag=true;
+        });
+        obj.next().bind("mouseout",function(){
+            _flag=false;
+            $(this).stop().fadeOut(150);
+            $(this).next().stop().fadeOut(150);
+           // $(this).prev().stop().fadeOut(150);
+        });
+     }
+     initCenter();
+     bindHoverBox();
+    </script>
+</body>
+</html>

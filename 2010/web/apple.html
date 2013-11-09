@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to Mokcy with Windows7</title>
+<meta name="keywords" content="墨颀" />
+<meta name="description" content="墨颀" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script language="javascript">  
+        $(document).ready(function() {   
+            function jump(count) {   
+                window.setTimeout(function(){   
+                    count--;   
+                    if(count > 0) {   
+                        $('#num').attr('innerHTML', count);   
+                        jump(count);   
+                    } else {   
+                        location.href="pwc-os/apple.html";   
+                    }   
+                }, 3400);   
+            }   
+            jump(8);   
+        });   
+    </script>  
+<script type="text/javascript" src="js/jquery.flash.js">
+$(document).ready(function(){
+    $('#example').flash(
+        { 
+          src: 'flash/safari.swf',
+          width: 100%,
+          height: 100%,
+          flashvars: { foo: 'bar', baz: 'zoo' }
+        },
+        { version: 8 }
+    );
+});
+</script>
+</head>
+<body>
+<div id="example" class="flash-replaced">
+    <embed width=100% height=100% type="application/x-shockwave-flash" src="flash/apple.swf" flashvars="foo=bar&baz=zoo" pluginspage="http://www.adobe.com/go/getflashplayer" />
+</div>
+<span></span>
+
+
+
+</body>
+</html>

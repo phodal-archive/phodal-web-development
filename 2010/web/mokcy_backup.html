@@ -1,0 +1,405 @@
+﻿<html>
+<head>
+<title>Mokcy New Style</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/stack-1.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.hrzAccordion.defaults.css">
+<script type="text/javascript" src="js/jquery.hrzAccordion.js"></script>
+<script type="text/javascript" src="js/jquery.hrzAccordion.examples.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="css/mokcy.css">
+<script type="text/javascript" src="js/iepngfix_tilebg.js"></script>
+<link rel="stylesheet" href="jquery.jgrowl.css" type="text/css"/>
+		<style type="text/css">
+
+			div.jGrowl div.manilla {
+				background-color: 		#FFF1C2;
+				color: 					navy;
+			}
+			
+			div.jGrowl div.smoke {
+				background: url(smoke.png) no-repeat;
+				-moz-border-radius: 	0px;
+				-webkit-border-radius:	0px;
+				width: 					280px;
+				height: 				55px;
+				overflow: 				hidden;
+			}
+
+			
+
+</style>
+<script type="text/javascript" src="jquery.ui.all.js"></script>
+		<script type="text/javascript" src="jquery.jgrowl.js"></script>
+		<script type="text/javascript">
+
+		// In case you don't have firebug...
+		if (!window.console || !console.firebug) {
+			var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
+			window.console = {};
+			for (var i = 0; i < names.length; ++i) window.console[names[i]] = function() {};
+		}
+
+		(function($){
+
+			$(document).ready(function(){
+				// This value can be true, false or a function to be used as a callback when the closer is clciked
+				$.jGrowl.defaults.closer = function() {
+					console.log("关闭全部", this);
+				};
+				
+				// A callback for logging notifications.
+				$.jGrowl.defaults.log = function(e,m,o) {
+					$('#logs').append("<div><strong>#" + $(e).attr('id') + "</strong> <em>" + (new Date()).getTime() + "</em>: " + m + " (" + o.theme + ")</div>")
+				}				
+				
+				$.jGrowl("欢迎来到墨颀");
+				$.jGrowl("这儿是一个舞台，属于每一个人", { life: 1000 });
+				$.jGrowl("去作品展览看看", { header: '做些什么？', sticky: true });
+			});
+		})(jQuery);
+
+		</script>
+<style>
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+
+ img, div, input { behavior: url("iepngfix.htc") }
+body {
+	background-color: #D6D6D6;
+	background-image: url(images/win7bg.jpg);
+}
+</style>
+ <!--
+  Consider wrapping the <style> element above in IE conditional comments.
+  This will prevent the .HTC being downloaded by IE7+ at all.
+  This might not work in IE6 installed alongside IE7 on the same computer.
+  -->
+
+ <!--[if lte IE 6]><style>/* ... your rules ... */</style><![endif]-->
+ <script type="text/javascript">
+
+ /*
+ if (document.all && /MSIE (5\.5|6)/.test(navigator.userAgent) &&
+  document.styleSheets && document.styleSheets[0] && document.styleSheets[0].addRule)
+ {
+  document.styleSheets[0].addRule('*', 'behavior: url(iepngfix.htc)');
+  // Feel free to add rules for specific elements only, as above.
+  // You have to call this once for each selector, like so:
+  //document.styleSheets[0].addRule('img', 'behavior: url(iepngfix.htc)');
+  //document.styleSheets[0].addRule('div', 'behavior: url(iepngfix.htc)');
+ }
+ */
+ /*
+ if (window.attachEvent && /MSIE (5\.5|6)/.test(navigator.userAgent))
+ {
+  function printPNGFix(disable)
+  {
+   for (var  i = 0; i < document.all.length; i++)
+   {
+    var e = document.all[i];
+    if (e.filters['DXImageTransform.Microsoft.AlphaImageLoader'] || e._png_print)
+    {
+     if (disable)
+     {
+      e._png_print = e.style.filter;
+      e.style.filter = '';
+     }
+     else
+     {
+      e.style.filter = e._png_print;
+      e._png_print = '';
+     }
+    }
+   }
+  };
+  window.attachEvent('onbeforeprint',  function() { printPNGFix(1) });
+  window.attachEvent('onafterprint',  function() { printPNGFix(0) });
+ }
+ */
+
+</script>
+
+<noscript>
+		<style type="text/css">
+			#dock { top: -32px; }
+			a.dock-item { position: relative; float: left; margin-right: 10px; }
+			.dock-item span { display: block; }
+			.stack { top: 0; }
+			.stack ul li { position: relative; }
+		</style>
+</noscript>
+<script>
+
+$(document).ready(function() {
+
+	var top = '-' + $('#slidedown_content .content').css('height');
+	var easing = 'easeOutBounce';
+	
+	$('#slidedown_top').mouseover(function() {
+		$('#slidedown_content').animate({'top' : 0}, {queue:false, duration:1000, easing: easing});
+	});
+	
+	$('#slidedown_bottom').mouseover(function() {
+		$('#slidedown_content').animate({'top' : top}, {queue:false, duration:500, easing: easing});
+	});
+
+});
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	function adPostWidth() {
+		
+		var ovWid = $('#header').width(); /*We use the header width with min-height of 700px in the style*/
+		var postN = Math.floor(ovWid / 250);
+		var widFix = Math.floor(ovWid / postN);
+		
+		$(".post_cont").css({ 'width' : widFix});
+
+	}
+  
+  function WidthHead() {
+		
+		var ovWid = $('#header').width(); /*We use the header width with min-height of 700px in the style*/
+		var widFixHead = Math.floor(ovWid / 3);
+		
+		$(".head_info").css({ 'width' : widFixHead - 2});
+
+	}
+	
+	adPostWidth();
+  WidthHead();	
+
+	$(window).resize(function () {
+		adPostWidth();	
+    WidthHead();	
+	});
+	
+  //hide toolbar and make visible the 'show' button
+	$("span.downarr a").click(function() {
+    $("#toolbar").slideToggle("fast");
+    $("#toolbarbut").fadeIn("slow");    
+  });
+  
+  //show toolbar and hide the 'show' button
+  $("span.showbar a").click(function() {
+    $("#toolbar").slideToggle("fast");
+    $("#toolbarbut").fadeOut();    
+  });
+  
+  //show tooltip when the mouse is moved over a list element 
+  $("ul#social li").hover(function() {
+		$(this).find("div").fadeIn("fast").show(); //add 'show()'' for IE
+    $(this).mouseleave(function () { //hide tooltip when the mouse moves off of the element
+        $(this).find("div").hide();
+    });
+  });
+  
+  //don't jump to #id link anchor 
+  $(".facebook, .twitter, .delicious, .digg, .rss, .stumble, .menutit, span.downarr a, span.showbar a").click(function() {
+   return false;                                         
+	});
+	
+  //show quick menu on click 
+	$("span.menu_title a").click(function() {
+		if($(".quickmenu").is(':hidden')){ //if quick menu isn't visible 
+			$(".quickmenu").fadeIn("fast"); //show menu on click
+		}
+		else if ($(".quickmenu").is(':visible')) { //if quick menu is visible 
+      $(".quickmenu").fadeOut("fast"); //hide menu on click
+    }
+	});
+	
+	//hide menu on casual click on the page
+	$(document).click(function() {
+			$(".quickmenu").fadeOut("fast");
+			$(".quickmenu").css({'vivibility': 'hidden'});
+	});
+	$('.quickmenu').click(function(event) { 
+		event.stopPropagation(); //use .stopPropagation() method to avoid the closing of quick menu panel clicking on its elements 
+	});
+
+		
+});
+	
+</script>
+<div id="slidedown_top"></div> <!-- slidedown_top -->
+<div id="slidedown_content">
+
+<div class="stack">
+		<img src="images/stacks/stack.png" alt="stack"/>
+		<ul id="stack">
+			<li><a href="contact.html"><span>联系我们</span><img src="images/stacks/aperture.png" alt="联系我们" /></a></li>
+			<li><a href="about.html"><span>关于我们</span><img src="images/stacks/photoshop.png" alt="关于我们" /></a></li>
+			<li><a href="gallery.html"><span>展览厅</span><img src="images/stacks/safari.png" alt="SHOW" /></a></li>
+			<li><a href="http://cms.mokcy.com"><span>CMS站点</span><img src="images/stacks/coda.png" alt="CMS站点" /></a></li>
+			<li><a href="index.html"><span>主页</span><img src="images/stacks/finder.png" alt="Home" /></a></li>			
+		</ul>
+	</div><!-- end div .stack -->
+	<div class="content">
+		<div class="block">
+			<img src="images/finder.png"/><br/> 
+			<p><font color=white>欢迎使用工具栏，这还只是个测试</font></p>
+		</div>
+		<div class="block">
+			<img src="images/safari.png"/><br/>
+			<ul><font color=violet>
+				<li>随着时代的科技的进步，各种各样的东西在发展</li>
+				<li>这个工具的名字叫"Dock".</li></font>
+			</ul>
+		</div>
+		<div class="block">
+			<img src="images/photoshop.png" height=64 width=64 /><br/>
+			<ul>  
+                                
+                                <moqi_body>
+                                <li>网站开发者列表</li>
+				<li><menu>Phodal Huang</menu></li>
+				<li><menu>Chufei.zhang</li></menu></moqi_body>
+			</ul>		
+		</div>
+		<div class="clear"></div>
+	</div> <!-- content -->
+	
+</div> <!-- slidedown_content -->
+
+<div id="slidedown_bottom">
+<!-- Website Content Start Here -->
+
+<div id="container">
+
+<div class="menu">
+<ul>
+<li class="l1"><a href="#">CSS3</a></li>
+<li class="l2"><a href="#">is really</a></li>
+<li class="l3"><a href="#">powerful</a></li>
+</ul>
+<span>by PV.M Garage</span> 
+</div>
+
+<div class="bubble">
+<div class="rectangle"><moqi><h2>墨颀简介</h2></moqi></div>
+<div class="triangle-l"></div>
+<div class="triangle-r"></div>
+<div class="info">
+<p><moqi_style>
+<moqi_body><menu>墨颀：初建于云凌斋（注：一个基于网络的文学社），当时主要以文宣传为主，充满相当的文化气息，而这也可以由墨颀这个字体现出来。随着我们的进步，及时代的发展，这一切都改变了。多媒体，一个多领域的融合。
+墨家，墨家是中国古代主要哲学派别之一，约产生于战国时期。墨家擅科学，墨家崇尚技术发明。颀，一个具有非凡艺术气息的汉字。</moqi_body></menu><br/><br/>
+
+<moqi_body><menu><moqi_en>Dream-Coastline</moqi_en>,曾经的游戏架构，未完的诗篇，还是那未动笔的小说。而就是在Dream-Coastline这样一个不散的缘份里面，墨颀这个国家在里面诞生了。这个国度里，非凡与不屈是这个国度的主题，而这也是墨颀的会徽所代表的寓意。
+时代，永恒的主题。将文学、艺术、音乐表演等赋予新的时代氛围，带入社会实践。是的，这就是墨颀在现在所做的事。广告设计、网页制作等这些需要不同专业，不同领域人们共同努力才能完成的工作，在此刻我们相聚。或许我们并不懂得Python、Java、Photoshop等，然而这些属于过去，而我们正在创造历史、改变未来。非命，通过努力奋斗掌握自己的命运，这是墨家的思想之一。</moqi_body></menu>
+</moqi_style>
+</p>
+<p>
+<a href="http://www.pvmgarage.com/en/2010/01/10/">Go to the tutorial!</a>
+</p>
+</div>
+</div>
+
+</div>
+
+<ul class="test">
+  <li><div class="handle"><img src='images/title1.png'></div><img src='images/logo.png' align='left'>
+    <h3>第一次的会议</h3>
+    <p>10-23,2010，一些日子之后，我们开始了我们的第一次会议。必竟是新社团在这些方面还是不是很成熟，然而我们还是相互认识了一下，不过这样的会议应该继续下去吧<br>
+    </p>
+  </li>
+  <li><div class="handle"><img src='images/title2.png'></div><img src='images/coda.png' align='left'>
+    <h3>第一次纳新</h3>
+    <p>10-12,2010,一年一度的学校纳新大会终于开始了，几天的忙碌之后我们终于迎来了我们的新伙伴。虽然在这之中出现许多问题，然后，纳新总体上算得上是成功的</p>
+  </li>
+  <li><div class="handle"><img src='images/title3.png'></div><img src='images/cs.png' width=64 height=64 align='left'>
+    <h3>墨颀正式成立</h3>
+    <p>10-08,2010,墨颀在西安文理申请获得通过，创始人名单：黄峰达、刘琪琪、张楚非、赵丹丹、曾雪莹、马俊杰、陈学俞、张静、李梦，感谢黄燕燕学姐的大力支持，还有张伟、黄强等。</p>
+  </li>
+  
+</ul>
+<br />
+<br />
+<div id="toolbarbut"> <!-- hide button -->
+  <span class="showbar"><a href="#">恢复</a></span>
+</div>
+
+<div id="toolbar"> <!-- toolbar container -->
+
+  <div class="leftside"> <!-- all things in floating left side -->
+  <ul id="social">
+    <li><a class="rss" href="#"></a><!-- icon -->
+      <div id="tiprss" class="tip"><!-- tooltip -->
+        <ul>
+          <li><a></a>Hello</li>
+          <li><a href="#"><small>[CSS3+HTML5]</small></a></li>
+        </ul>  
+      </div>
+    </li>
+    <li><a class="facebook" href="windows7.html"></a>
+      <div id="tipfacebook" class="tip">
+        <ul>
+          <li><a>切换到</a></li>
+          <li><a href="windows7.html"> WIN 7</a></li>
+        </ul>  
+      </div>  
+    </li>
+    <li><a class="twitter" href="apple.html"></a>
+      <div id="tiptwitter" class="tip">
+        <ul>
+          <li><a href="#">转向</a></li>
+          <li><a href="apple.html">| MAC OS X</a></li>
+        </ul>  
+      </div>
+    </li>
+    <li><a class="delicious" href="#"></a>
+      <div id="tipdelicious" class="tip">
+        <ul>
+          <li><a>作品展览</a></li>
+          <li><a href="art.html">| 艺术</a></li>
+          <li><a href="article">| 文章</a></li>
+        </ul>  
+      </div>
+    </li>
+    <li><a class="digg" href="news.html"></a>
+      <div id="tipdigg" class="tip">
+        <ul>
+          <li><a>看看</a></li>
+          <li><a  href="news.html">| 墨颀的历史</a></li>
+        </ul>  
+      </div>
+    </li>
+    <li><a class="stumble" href="index.html"></a>
+      <div id="tipstumble" class="tip">
+        <ul>
+          <li><a>唉</a></li>
+          <li><a href="index.html">| 返回原风格</a></li>
+        </ul>  
+      </div>
+    </li>
+  </ul>
+  </div>
+
+  <div class="rightside"> <!-- all things in floating right side -->
+  <span class="downarr"> <!-- hide button -->
+  <a href="#"></a>
+  </span>
+  <span class="menu_title">
+    <a class="menutit" href="#">本页简介</a> <!-- quick menu title -->
+  </span>
+  <div class="quickmenu">
+    <ul> <!-- quick menu list -->
+      <li><a>这是一个的CSS3+HTML5的网页，我们融入大量的新风格，然而这些风格也在某种程度上要求我们升级到最好的浏览器，而不是最新的。IE8.0及以下的IE浏览器是不支持些页面的。</a></li>
+    </ul> 
+  </div>
+  </div>
+
+</div>
+<div style="clear:both;"></div><br />
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml":lang="zh-cn" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>西安文理学院-墨颀——活动</title>
+<link rel="shortcut icon" herf="images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="styles/action.css" />
+<link rel="stylesheet" type="text/css" href="styles/roundabout.css"/>
+<link rel="Shortcut Icon" href="images/favicon.ico">
+</head>
+
+<body>
+<text>墨颀</text>
+<div class="roundabout-example">
+    <ul>
+        <li>
+            <div class="stage">
+                <h3><menu>作品区</menu></h3>
+                
+                <p class="intro">
+                    这里将展示墨颀发起的活动等<br />
+                   欢迎您的到来
+                </p>
+                
+                <div class="how-to">
+                    <span class="left arrow">&larr;</span>
+                    <span class="right arrow">&rarr;</span>
+                    
+                    <strong><menu>我们举办过这些活动或将举动的活动</menu></strong>
+                   了解更多。。
+                </div>
+            </div>
+        </li>
+                <li>
+            <div class="stage">
+                <h3><menu>文理烩</menu></h3>
+                
+                <p class="intro">
+                    结合图片方式展示
+                </p>
+                <div class="how-to">
+                <strong><menu>各式各样的图形展示</menu></strong>
+                </div>
+            </div>
+        </li><li class="back"><h2><menu>墨颀第一届PPT大赛</menu></h2>
+   <br><br/></li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src="scripts/jquery.min.js" /></script>
+<script type="text/javascript" src="scripts/jquery.lazyload.js" /></script>
+<script type="text/javascript" src="scripts/jquery.roundabout.js"></script>
+<script type="text/javascript" charset="utf-8">//LazyLoad延时加载
+        $(function(){
+             $("img").lazyload({
+              placeholder:"images/grey.gif",
+              effect:"fadeIn"
+              });
+        });
+</script>
+<script type="text/javascript">// 动态背景 <![CDATA[
+var scrollSpeed = 60;
+var step = 1;
+var current = 0;
+var imageWidth = 1444;
+var headerWidth = 800;
+var restartPosition = -(imageWidth - headerWidth);
+function scrollBg(){
+current -= step;
+if (current == restartPosition){
+current = 0;
+}
+$('body').css("background-position","50%"+current+"px");
+}
+var init = setInterval("scrollBg()", scrollSpeed);
+// ]]>
+</script>
+<script type="text/javascript">//展示效果
+   $(document).ready(function() {
+      $('ul').roundabout({
+         minOpacity: 0.0, // invisible!
+         minScale: 0.6 // tiny!
+      });
+   });
+</script>
+
+</html>

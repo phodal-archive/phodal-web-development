@@ -1,0 +1,734 @@
+﻿<html>
+<head>
+<title>Welcome to  Mokcy.com</title>
+<link href="css/facedock.css" rel="stylesheet" type="text/css" />
+<link href="moqi.css" rel="stylesheet" type="text/css" />
+<link href="css/mfonts.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="css/easyui.css">
+<link rel="stylesheet" type="text/css" href="css/icon.css">
+<style type='text/css'   media='all'>
+    @import 'flexgrid/style.css';
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="js/iepngfix_tilebg.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" media="screen" />
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript">
+		$(document).ready(function() {
+			
+			$("a[rel=example_group]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+			
+			$("#office").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+                        $("#office2").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+                        $("#office3").fancybox({
+				'width'				: '80%',
+				'height'			: '80%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+                         $("#office4").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+                        $("#office5").fancybox({
+				'width'				: '80%',
+				'height'			: '80%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+		});
+</script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<style type="text/css">
+		
+			*{ padding:0px; margin:0px; }
+			.boxgrid{ 
+				width: 325px; 
+				height: 260px; 
+				margin:10px; 
+				float:left; 
+				border: solid 2px #8399AF; 
+				overflow: hidden; 
+				position: relative; 
+			}
+				.boxgrid img{ 
+					position: absolute; 
+					top: 0; 
+					left: 0; 
+					border: 0; 
+				}
+				.boxgrid p{ 
+					padding: 0 10px; 
+					color:#afafaf; 
+					font-weight:bold; 
+					font:10pt "Lucida Grande", Arial, sans-serif; 
+				}
+				
+			.boxcaption{ 
+				float: left; 
+				position: absolute; 
+				background: #000; 
+				height: 100px; 
+				width: 100%; 
+				opacity: .8; 
+				/* For IE 5-7 */
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+				/* For IE 8 */
+				-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+ 			}
+ 				.captionfull .boxcaption {
+ 					top: 260;
+ 					left: 0;
+ 				}
+ 				.caption .boxcaption {
+ 					top: 220;
+ 					left: 0;
+ 				}
+				
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//To switch directions up/down and left/right just place a "-" in front of the top/left attribute
+				//Vertical Sliding
+				$('.boxgrid.slidedown').hover(function(){
+					$(".cover", this).stop().animate({top:'-260px'},{queue:false,duration:300});
+				}, function() {
+					$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:300});
+				});
+				//Horizontal Sliding
+				$('.boxgrid.slideright').hover(function(){
+					$(".cover", this).stop().animate({left:'325px'},{queue:false,duration:300});
+				}, function() {
+					$(".cover", this).stop().animate({left:'0px'},{queue:false,duration:300});
+				});
+				//Diagnal Sliding
+				$('.boxgrid.thecombo').hover(function(){
+					$(".cover", this).stop().animate({top:'260px', left:'325px'},{queue:false,duration:300});
+				}, function() {
+					$(".cover", this).stop().animate({top:'0px', left:'0px'},{queue:false,duration:300});
+				});
+				//Partial Sliding (Only show some of background)
+				$('.boxgrid.peek').hover(function(){
+					$(".cover", this).stop().animate({top:'90px'},{queue:false,duration:160});
+				}, function() {
+					$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:160});
+				});
+				//Full Caption Sliding (Hidden to Visible)
+				$('.boxgrid.captionfull').hover(function(){
+					$(".cover", this).stop().animate({top:'160px'},{queue:false,duration:160});
+				}, function() {
+					$(".cover", this).stop().animate({top:'260px'},{queue:false,duration:160});
+				});
+				//Caption Sliding (Partially Hidden to Visible)
+				$('.boxgrid.caption').hover(function(){
+					$(".cover", this).stop().animate({top:'160px'},{queue:false,duration:160});
+				}, function() {
+					$(".cover", this).stop().animate({top:'220px'},{queue:false,duration:160});
+				});
+			});
+		</script>
+<style type="text/css">
+<script type="text/javascript" src="js/jquery.tablesorter.js">
+$(document).ready(function() 
+    { 
+        $("#myTable").tablesorter(); 
+    } 
+); 
+</script>
+<style type="text/css">
+
+ /*
+  USAGE:
+  Copy and paste this one line into your site's CSS stylesheet.
+  Add comma-separated CSS selectors / element names that have transparent PNGs.
+  Remember that the path is RELATIVE TO THIS HTML FILE, not the CSS file.
+  See below for another method of activating the script without adding CSS here.
+ */
+
+ img, div, input { behavior: url("iepngfix.htc") }
+
+
+ /*
+  Here's an example you might use in practice:
+  img, div.menu, .pngfix, input { behavior: url("/css/iepngfix.htc") }
+ */
+
+ </style>
+
+ <!--
+  Consider wrapping the <style> element above in IE conditional comments.
+  This will prevent the .HTC being downloaded by IE7+ at all.
+  This might not work in IE6 installed alongside IE7 on the same computer.
+  -->
+
+ <!--[if lte IE 6]><style>/* ... your rules ... */</style><![endif]-->
+
+
+ <script type="text/javascript">
+ //<![CDATA[
+
+ // If you don't want to put nonstandard properties in your stylesheet, here's yet
+ // another means of activating the script. This assumes that you have at least one
+ // stylesheet included already in the document above this script.
+ // To activate, delete the CSS rules above and uncomment below (remove /* and */ ).
+
+ /*
+ if (document.all && /MSIE (5\.5|6)/.test(navigator.userAgent) &&
+  document.styleSheets && document.styleSheets[0] && document.styleSheets[0].addRule)
+ {
+  document.styleSheets[0].addRule('*', 'behavior: url(iepngfix.htc)');
+  // Feel free to add rules for specific elements only, as above.
+  // You have to call this once for each selector, like so:
+  //document.styleSheets[0].addRule('img', 'behavior: url(iepngfix.htc)');
+  //document.styleSheets[0].addRule('div', 'behavior: url(iepngfix.htc)');
+ }
+ */
+
+
+ // Here's another script that disables all PNGs in IE when the page is printed.
+ /*
+ if (window.attachEvent && /MSIE (5\.5|6)/.test(navigator.userAgent))
+ {
+  function printPNGFix(disable)
+  {
+   for (var  i = 0; i < document.all.length; i++)
+   {
+    var e = document.all[i];
+    if (e.filters['DXImageTransform.Microsoft.AlphaImageLoader'] || e._png_print)
+    {
+     if (disable)
+     {
+      e._png_print = e.style.filter;
+      e.style.filter = '';
+     }
+     else
+     {
+      e.style.filter = e._png_print;
+      e._png_print = '';
+     }
+    }
+   }
+  };
+  window.attachEvent('onbeforeprint',  function() { printPNGFix(1) });
+  window.attachEvent('onafterprint',  function() { printPNGFix(0) });
+ }
+ */
+
+ //]]>
+</script>
+<script>
+		function resize(){
+			$('#w').window({
+				title: 'New Title',
+				width: 600,
+				modal: true,
+				shadow: true,
+				closed: true,
+				height: 300
+			});
+		}
+		function open1(){
+			$('#w').window('open');
+		}
+		function close1(){
+			$('#w').window('close');
+		}
+                function test(){
+			$('#test').window({
+				title: 'Title1',
+				width: 600,
+				modal: true,
+				shadow: true,
+				closed: true,
+				height: 300
+			});
+		}
+                function open2(){
+			$('#test').window('open');
+		}
+		function close2(){
+			$('#test').window('close');
+		}
+                function art(){
+			$('#art').window({
+				title: 'Title2',
+				width: 600,
+				modal: true,
+				shadow: true,
+				closed: true,
+				height: 300
+			});
+		}
+                function open3(){
+			$('#art').window('open');
+		}
+		function close3(){
+			$('#art').window('close');
+		}
+                function article(){
+			$('#article').window({
+				title: 'Title2',
+				width: 600,
+				modal: true,
+				shadow: true,
+				closed: true,
+				height: 300
+			});
+		}
+                function open4(){
+			$('#article').window('open');
+		}
+		function close4(){
+			$('#article').window('close');
+		}
+                function qq(){
+			$('#qq').window({
+				title: 'Title2',
+				width: 600,
+				modal: true,
+				shadow: true,
+				closed: true,
+				height: 300
+			});
+		}
+                function open5(){
+			$('#qq').window('open');
+		}
+		function open5(){
+			$('#qq').window('close');
+		}
+</script>
+<link  href="//fonts.googleapis.com/css?family=Lobster:regular&subset=latin" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script>
+$(document).ready(function() {
+
+	//Transition you want :)
+	var easing_type = 'easeOutBounce';
+	
+	//The default height for the dock (on mouse out)
+	var default_dock_height = '40';
+	
+	//Expanded height, the height of the dock on mouse over, you have to set it in CSS
+	var expanded_dock_height = $('#dock').height();
+	
+	//Fake body height
+	var body_height = $(window).height() - default_dock_height;
+	
+	//Set the size of #fake_body
+	$('#fake-body').height(body_height);
+	
+	//Set the CSS attribute for #dock
+	$('#dock').css({'height': default_dock_height, 'position':'absolute', 'top': body_height});
+	
+	//In case the user resize the browser, we will need to recalculate the height and top for #fake_body and #dock
+	$(window).resize(function () {
+		
+		//Grab the updated height/top
+		updated_height = $(window).height() - default_dock_height;
+		
+		//Set the updated height for #fake_body and top for #dock
+		$('#fake-body').height(updated_height);		
+		$('#dock').css({'top': updated_height});
+	});
+		
+	//The main event for the dock bottom menu
+	$('#dock').mouseover(function () {
+		
+		//Recalculate expanded height (always get the latest height), in case user has resized the window
+		expanded_height = $(window).height() - expanded_dock_height;
+		
+		//Animate the height change, set the height to expanded_dock_height and set the top value as well
+		$(this).animate({'height':expanded_dock_height,'top': expanded_height},{queue:false, duration:800, easing: easing_type});
+		
+	}).mouseout(function () {
+		
+		//Recalculate default body height (always get the latest height), in case user has resized the window
+		body_height = $(window).height() - default_dock_height;
+		
+		//Animate the height change, set the height to default_dock-height and set the top value as well
+		$(this).animate({'height':default_dock_height,'top': body_height},{queue:false, duration:800, easing: easing_type});
+		
+	});
+	
+});
+
+</script>
+</head>
+<script type="text/javascript"> 
+$(document).ready(function(){
+
+    $("ul.subnav").parent().append("<span></span>"); //Only shows drop down trigger when js is enabled - Adds empty span tag after ul.subnav
+    
+    $("ul.topnav li span").click(function() { //When trigger is clicked...
+        
+        //Following events are applied to the subnav itself (moving subnav up and down)
+        $(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click
+
+        $(this).parent().hover(function() {
+        }, function(){  
+            $(this).parent().find("ul.subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up
+        });
+
+        //Following events are applied to the trigger (Hover events for the trigger)
+        }).hover(function() { 
+            $(this).addClass("subhover"); //On hover over, add class "subhover"
+        }, function(){  //On Hover Out
+            $(this).removeClass("subhover"); //On hover out, remove class "subhover"
+    });
+
+});
+</script>
+<script>
+$(document).ready(function() {
+    //Tooltips
+    $(".tip_trigger").hover(function(){
+        tip = $(this).find('.tip');
+        tip.show(); //Show tooltip
+    }, function() {
+        tip.hide(); //Hide tooltip
+    }).mousemove(function(e) {
+        var mousex = e.pageX + 20; //Get X coodrinates
+        var mousey = e.pageY + 20; //Get Y coordinates
+        var tipWidth = tip.width(); //Find width of tooltip
+        var tipHeight = tip.height(); //Find height of tooltip
+
+        //Distance of element from the right edge of viewport
+        var tipVisX = $(window).width() - (mousex + tipWidth);
+        //Distance of element from the bottom of viewport
+        var tipVisY = $(window).height() - (mousey + tipHeight);
+
+        if ( tipVisX < 20 ) { //If tooltip exceeds the X coordinate of viewport
+            mousex = e.pageX - tipWidth - 20;
+        } if ( tipVisY < 20 ) { //If tooltip exceeds the Y coordinate of viewport
+            mousey = e.pageY - tipHeight - 20;
+        }
+        //Absolute position the tooltip according to mouse position
+        tip.css({  top: mousey, left: mousex });
+    });
+});
+</script>
+<div id="dock">
+<p><font color=white><font size=3>应用程序列表:</font></font></p>
+<script type="text/javascript" src="js/iepngfix_tilebg.js"></script>
+<script type="text/javascript">
+$(function(){
+
+    $("div#demo ul#menu li img").bubbleup({tooltip: true, scale:96});
+    
+});
+</script>
+<link href="css/bubbleup.css" rel="stylesheet" type="text/css" />
+<div id="demo">
+  <ul id="menu">
+    <li> <a id="office3" href="http://web2.qq.com" alt="Web QQ"><img src="images/qq.png" alt="Web QQ"/></a></li>
+    <li> <a id="office4" href="http://www.photoshop.com/tools?wf=editor"><img src="images/photoshop.png" alt="Web Photoshop"/></a></li>
+    <li> <a id="office5" href="http://www.runaware.com/microsoft/en-us/microsoftoffice2007/td?action=launch_wizard_final"><img src="images/office.png" alt="Web Office"/></a></li>
+</ul>
+</div>
+</div>
+
+<body>
+<div class="container">
+    <div id="header">
+        <ul class="topnav">
+            <li><a href="#">首页</a></li>
+            <li>
+                <a href="#">作品展览</a>
+                <ul class="subnav">
+                    <li><a id="office" href="http://cms.mokcy.com/cms/show_article/264001.html">文章</a></li>
+                    <li><div><a href="javascript:void(0)" onclick="open3()">艺术</a></div></li>
+                    <li><div><a href="javascript:void(0)" onclick="open4()">其他</a></div></li>
+                </ul>
+            </li>
+            <li><a id="office2" href="windows.html">进展</a><li>
+            <li><div><a href="javascript:void(0)" onclick="open2()">联系我们</a></div></li>
+            <li>
+                <a href="http://cms.mokcy.com">CMS</a>
+                <ul class="subnav">
+                <li><a href="http://cms.mokcy.com/cms/show_categories/210001_1.html">墨颀在线</a></li>
+                <li><a href="http://cms.mokcy.com/cms/show_categories/143001_1.html">小说专区</a></li>
+                <li><a href="http://cms.mokcy.com/cms/show_categories/137001_1.html">文学一品</a></li>
+                <li><a href="http://cms.mokcy.com/cms/show_categories/131001_1.html">诗词天地</a></li>
+                <li><a href="http://cms.mokcy.com/cms/show_categories/132001_1.html">作品展示</a></li>
+                <li><a href="http://cms.mokcy.com/cms/show_categories/133001_1.html">软件共享</a></li>
+                <li><a href="http://cms.mokcy.com/cms/show_categories/135001_1.html">交流讨论</a></li>
+                <li><a href="http://cms.mokcy.com/cms/show_categories/139001_1.html">教程总览</a></li>
+                </ul>
+            </li>
+       
+        </ul>
+    </div>
+</div>
+<body>
+<script type="text/javascript" src="js/jquery.bubbleup.js">
+//Set custom configurations
+var config = {
+     sensitivity: 2, 
+     interval: 100, 
+     over: megaHoverOver, 
+     timeout: 500, 
+     out: megaHoverOut 
+};
+$("ul#topnav li .sub").css({'opacity':'0'}); 
+$("ul#topnav li").hoverIntent(config);
+</script>
+<script type="text/javascript" src="js/jquery.featureList-1.0.0.js"></script>
+<script language="javascript">
+		$(document).ready(function() {
+
+			$.featureList(
+				$("#tabs li a"),
+				$("#output li"), {
+					start_item	:	1
+				}
+			);
+
+			/*
+			
+			// Alternative
+
+			
+			$('#tabs li a').featureList({
+				output			:	'#output li',
+				start_item		:	1
+			});
+
+			*/
+
+		});
+	</script>
+<link rel="stylesheet" type="text/css" href="css/easyui.css">
+<link rel="stylesheet" type="text/css" href="css/icon.css">
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#aa1').click(function(){
+				$('#mm').menu('show',{
+					left:100,
+					top:200
+				});
+			});
+			$('#aa2').click(function(){
+				$('#mm').menu('hide');
+			});
+			$(document).bind('contextmenu',function(e){
+				$('#mm').menu('show', {
+					left: e.pageX,
+					top: e.pageY
+				});
+				return false;
+			});
+		});
+	</script>
+ <body style="margin:0;padding:0px;">
+	<div id="mm" class="easyui-menu" style="width:180px;">
+		<div onclick="window.open('http://cms.mokcy.com')">在新标签页中打开链接</div>
+		<div>
+			<span>打开</span>
+			<div style="width:150px;">
+				<div><b><a href="index.html">主页</b></a></div>
+				<div><a href="show.html">作品展览</a></div>
+				<div><a href="http://cms.mokcy.com">CMS站点</a></div>
+				<div>
+					<span>搜索</span>
+					<div style="width:120px;">
+                                                <div><a href="http://cn.bing.com/" target="_blank">Bing</a></div>
+						<div><a href="http://www.google.com" target="_blank">Google</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div iconCls="icon-save">保存</div>
+		<div class="menu-sep"></div>
+		<div onclick="window.close()">退出</div>
+	</div>
+
+<body style="height:100%;width:100%;overflow:hidden;border:none;" >
+<div id="w" class="easyui-window" title="关于墨颀" iconcls="icon-save" style="width:840px;height:620px;padding:5px;background: #fafafa;">
+		<div class="easyui-layout" fit="true">
+			<div region="center" border="false" style="padding:10px;background:#fff;border:1px solid #ccc;">
+<h1>墨颀</h1>
+<p>我们Zai努力....</p>
+		<hr/>
+		<div id="feature_list">
+			<ul id="tabs">
+				<li>
+					<a href="javascript:;">
+						<img src="images/programming.png"/>
+						<h3>技术</h3>
+						<span>墨颀的一部分</span>
+                                        </a>
+
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="images/word.png" />
+						<h3>文学</h3>
+						<span>各种各样的交流</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="images/powerpoint.png" />
+						<h3>多媒体</h3>
+						<span>时代的潮流</span>
+					</a>
+				</li>
+			</ul>
+			<ul id="output">
+				<li>
+					<img src="mindscape/sample2.jpg" />
+					<a href="#">详情...</a>
+				</li>
+				<li>
+					<img src="mindscape/sample3.jpg" />
+					<a href="#">详情...</a>
+				</li>
+				<li>
+					<img src="mindscape/sample1.jpg" />
+					<a href="#">详情...</a>
+				</li>
+			</ul>
+		</div>
+              <h2><p>创造，表明我们主张的不是纯粹的玩乐，</p><p>更多的是指导有志之士
+来不断地去创造，为未来带来新鲜的活力和独特的文化产物。</p>
+<p>发展，一个团队要保持蓬勃的生命力就必须与时俱进。要实现奋斗目
+标就少不了发展。</p>
+</h2>
+	</div>
+			<div region="south" border="false" style="text-align:right;height:30px;line-height:30px;">
+				<a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onclick="resize()">知道了</a>
+				<a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onclick="resize()">关闭</a>
+			</div>
+		</div>
+	</div>
+<div id="test" class="easyui-window" title="联系人列表" closed="true" modal="true" style="width:850px;height:250px;padding:5px;background: #fafafa;">
+<div region="south" border="false" style="text-align:right;height:30px;line-height:30px;">
+<table id="myTable" class="tablesorter"> 
+<thead> 
+<tr> 
+    <th>名称</th> 
+    <th>职称</th> 
+    <th>邮箱</th> 
+    <th>QQ</th> 
+    <th>电话</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+    <td>张楚非</td> 
+    <td>管理员</td> 
+    <td>chufei.zhan@gmail.com</td> 
+    <td>243064432</td> 
+    <td></td> 
+</tr> 
+<tr> 
+    <td>黄峰达</td> 
+    <td>管理员</td> 
+    <td>gmszone@gmail.com</td> 
+    <td>549647470</td> 
+    <td>15260676610</td> 
+</tr> 
+<tr> 
+    <td>刘琪琪</td> 
+    <td></td> 
+    <td>378169338</td> 
+    <td>378169338@qq.com</td> 
+    <td></td> 
+</tr> 
+</tbody> 
+</table> 
+<a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onclick="test()">确定</a>
+<a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onclick="test()">关闭</a>
+</div>
+</div>
+<div id="art" class="easyui-window" title="艺术" closed="true" modal="true" style="width:850px;height:auto;padding:5px;background: #fafafa;">
+<div region="south" border="false" style="text-align:right;height:30px;line-height:30px;">
+<div class="boxgrid captionfull">
+				<img src="photos/jareck.jpg"/>
+				<div class="cover boxcaption">
+					<h3>Jarek Kubicki</h3>
+					<p>Artist<br/><a href="" target="_BLANK">More Work</a></p>
+				</div>		
+			</div>
+			
+			<div class="boxgrid caption">
+				<img src="photos/kamil.jpg"/>
+				<div class="cover boxcaption">
+					<h3>Kamil Smala</h3>
+					<p>Artist<br/><a href="" target="_BLANK">More Work</a></p>
+				</div>
+			</div>
+				
+			<div class="boxgrid slideright">
+				<img class="cover" src="photos/martin.jpg"/>
+				<h3>Martin Stranka</h3>
+				<p>Photographer<br/><a href="" target="_BLANK">More Work</a></p>
+			</div>
+			<div class="boxgrid thecombo">
+				<img class="cover" src="photos/florian.jpg"/>
+				<h3>Florian Nicolle</h3>
+				<p>Graphic Designer<br/><a href="" target="_BLANK">More Work</a></p>
+			</div>
+			
+			<div class="boxgrid slidedown">
+				<img class="cover" src="photos/nonsense.jpg"/>
+					<h3>The Nonsense Society</h3>
+					<p>Art, Music, Word<br/><a href="" target="_BLANK">Website</a></p>	
+			</div>
+			<div class="boxgrid peek">
+				<a href="" target="_BLANK"><img src="photos/birss.jpg"/></a>
+				<a href="" target="_BLANK"><img class="cover" src="photos/buildinternet.jpg"/></a>
+			</div>
+<a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onclick="art()">确定</a>
+<a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onclick="art()">关闭</a>
+</div>
+</div>
+<div id="qq" class="easyui-window" title="文章" closed="true" modal="true" style="width:850px;height:600px;padding:5px;background: #fafafa;">
+<div region="south" border="false" style="text-align:right;height:30px;line-height:30px;">
+<div><a id="office3" href="article2.html">QQ</a>
+<a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onclick="qq()">确定</a>
+<a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onclick="qq()">关闭</a>
+</div>
+</div>
+<div id="article" class="easyui-window" title="文章" closed="true" modal="true" style="width:850px;height:600px;padding:5px;background: #fafafa;">
+<div region="south" border="false" style="text-align:right;height:30px;line-height:30px;">
+<a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onclick="article()">确定</a>
+<a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onclick="article()">关闭</a>
+</div>
+</div>
+</body>
+</body>
+</html>

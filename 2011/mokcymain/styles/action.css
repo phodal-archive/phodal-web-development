@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:wenquanyi,"Microsoft Yahei","微软雅黑",Arial, Helvetica, sans-serif;
+	font-size:16px;
+	background-image: url(../images/back.jpg);
+	height:auto;
+	width:auto;
+	overflow:hidden;
+	cursor:url(../oxygen/oxygen.cur);
+}
+#container{
+	height:600px;
+	overflow:hidden;
+}
+menu {
+	font-family:"Microsoft Yahei","微软雅黑",Arial, Helvetica, sans-serif;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+}
+menu:hover {
+    -webkit-transform: rotate(360deg) scale(1.5);
+    -moz-transform: rotate(360deg) scale(1.5);
+    -o-transform: rotate(360deg) scal(1.5);
+}
+
+h1 {
+	margin: 0px;
+	padding: 2px 0;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+h2 {
+	position: relative;
+	height: 25px;
+	margin: 0px;
+	padding: 10px 0 0 0;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+h3 {
+	margin: 0 0 10px 0;
+	padding: 2px 0 5px 0;
+	font-size: 20px;
+	font-weight: normal;
+	color: #333;	
+	border-bottom: 1px dotted #333;
+}
+
+h4 {
+	margin: 0 0 0 0;
+	padding: 0 0 5px 0;
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+text{
+	font-size:25px;
+	position:absolute;
+	width:auto;
+	top:40px;
+	right:80px;
+}

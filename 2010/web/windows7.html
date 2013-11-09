@@ -1,0 +1,216 @@
+<html>
+<head>
+    <title>Windows 7 Desktop</title>
+    <link href="css/win7style.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script src="js/jquery.fullscreenr.js" type="text/javascript"></script>
+    <script src="js/jquery.fullscreenr.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script>
+		!window.jQuery && document.write('<script src="js/jquery-min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/easyui.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script>
+		function resize(){
+			$('#w').window({
+				title: 'New Title',
+				width: 600,
+				modal: true,
+				shadow: false,
+				closed: false,
+				height: 300
+			});
+		}
+		function open1(){
+			$('#w').window('open');
+		}
+		function close1(){
+			$('#w').window('close');
+		}
+		function test(){
+			$('#test').window('open');
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" media="screen" />
+ 	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			$("a[rel=example_group]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+			
+			$("#office").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+		});
+	</script>
+	<script type="text/javascript">  
+		<!--
+			// You need to specify the size of your background image here (could be done automatically by some PHP code)
+			var FullscreenrOptions = {  width: 1920, height: 1200, bgID: '#bgimg' };
+			// This will activate the full screen background!
+			jQuery.fn.fullscreenr(FullscreenrOptions);
+		//-->
+	</script>
+<link rel="stylesheet" type="text/css" href="css/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="css/themes/icon.css">
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#aa1').click(function(){
+				$('#mm').menu('show',{
+					left:100,
+					top:200
+				});
+			});
+			$('#aa2').click(function(){
+				$('#mm').menu('hide');
+			});
+			$(document).bind('contextmenu',function(e){
+				$('#mm').menu('show', {
+					left: e.pageX,
+					top: e.pageY
+				});
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+    <img id="bgimg" src="images/win7bg.jpg" />
+    <div id="win">
+        <ul id="app">
+            <li><a href="index.html"  alt="首页">
+                <img src="images/computer.png"><br />
+                计算机</a></li>
+            <li><a href="http://cms.mokcy.com"  alt="CMS站点">
+                <img src="images/network.png"><br />
+                网络</a></li>
+        </ul>
+    </div>
+    <div id="taskbar">
+        <a href="#" id="start"></a>
+        <a href="http://cms.mokcy.com" style="left: 60px"  alt="CMS站点">
+            <img src="images/ie.png"/>
+        </a>
+        <a href="#" style="left: 120px">
+            <img src="images/library.png" />
+        </a>
+        <a href="#" style="left: 180px">
+            <img src="images/mp.png" />
+        </a>
+        <a href="#" style="left: 240px">
+            <img src="images/live.png" />
+        </a>
+        <a href="#" style="left: 300px">
+            <img src="images/outlook.png" />
+        </a>
+        <div id="desktop"></div>
+    </div>
+    <div id="menuwin">
+        <div id="startmenu"></div>
+        <ul id="programs">
+            <li><a href="#">
+                <img src="images/ie.png" />Internet Explorer</a></li>
+            <li><a href="#">
+                <img src="images/mc.png" />Microsoft Media Center</a></li>
+            <li>
+                <div id="leftspliter"></div>
+            </li>
+            <li><a href="office.html">
+	         <img src="images/word.png" />Microsoft Word 2010</a></li>
+            <li>
+            <li><a href="office.html">
+	         <img src="images/logo.png" height=48 width=64 />回到标准主页</a></li>
+            <li>
+            <li><a href="mokcy.html">
+	         <img src="images/aperture.png" height=54 width=54 />新风格界面</a></li> 
+            <li><a href="apple.html">
+	         <img src="images/apple.png" height=39 width=30 />进入苹果界面</a></li>                       
+                <div id="leftspliter"></div>
+            </li>
+            <li><a href="#">
+                <img src="images/narrow.png" />全部程序</a></li>
+            <li>
+                <img id="search" src="images/search.png" /></li>
+        </ul>
+        <ul id="links">
+            <li class="icon">
+                <img src="images/user.png" /></li>
+            <li><a href="http://cms.mokcy.com"><span>我的文档</span></a></li>
+            <li><a href="art.html"><span>图片收藏</span></a></li>
+            <li><a href="#"><span>我的音乐</span></a></li>
+            <li>
+                <div id="rightspliter"></div>
+            </li>
+            <li><a href="#"><span>游戏</span></a></li>
+            <li><a href="index.html"><span>我的电脑</span></a></li>
+            <li>
+                <div id="rightspliter"></div>
+            </li>
+            <li><a href="#"><span>控制面板</span></a></li>
+            <li><a href="#"><span>设备和打印机</span></a></li>
+            <li><a href="#"><span>默认程序</span></a></li>
+        </ul>
+    </div>
+</body>
+
+<body style="margin:0;padding:0px;">
+	<h1>Mokcy.com</h1>
+	<div id="mm" class="easyui-menu" style="width:120px;">
+		<div onclick="javascript:alert('new')">新建</div>
+		<div>
+			<span>打开</span>
+			<div style="width:150px;">
+				<div><b><a href="index.html">主页</b></a`></div>
+				<div><a href="show.html">作品展览</a></div>
+				<div><a href="http://cms.mokcy.com">CMS站点</a></div>
+				<div>
+					<span>M1</span>
+					<div style="width:120px;">
+						<div>sub1</div>
+						<div>sub2</div>
+						<div>sub3</div>
+					</div>
+				</div>
+				<div>
+					<span>搜索</span>
+					<div style="width:120px;">
+                                                <div><a href="http://cn.bing.com/" target="_blank">Bing</a></div>
+						<div><a href="http://www.google.com" target="_blank">Google</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div iconCls="icon-save">保存</div>
+		<div class="menu-sep"></div>
+		<div>退出</div>
+	</div>
+</body>
+
+<body style="height:100%;width:100%;overflow:hidden;border:none;" >
+<div id="w" class="easyui-window" title="欢迎来到Windows7 Style" iconCls="icon-save" style="width:500px;height:200px;padding:5px;background: #fafafa;">
+<div class="easyui-layout" fit="true">
+<div region="center" border="false" style="padding:10px;background:#fff;border:1px solid #ccc;">当前我们已经为此配置了一个简单的办公程序WORD，这是一个有趣而且简单的界面。<a id="office" href="office.html">额，我想试试</a>当然了，你也可以选择从开始的Microsoft Word 2010 进去
+</div>
+</div>
+</div>
+</body>
+</html>

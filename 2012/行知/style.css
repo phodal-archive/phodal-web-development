@@ -1,0 +1,91 @@
+body{
+	background:url(background.jpg) bottom left no-repeat;
+	min-width:1024px;
+}
+
+#mtop{
+	margin:0 auto;
+	position:relative;
+	width:100%;
+	height:300px;
+	background:url(topright.png) right no-repeat;
+}
+.mlogo{
+	float:left;
+	width:227px;
+	height:199px;
+	background: url(logo.png) no-repeat;
+}
+#mpaper{
+	position:relative;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:-84px;	
+	width:716px;
+	height:657px;
+	background:url(mcenter.png) no-repeat;
+}
+#mblock{
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	left:220px;
+	top:80px;
+}
+#mblock .name{
+	position:relative;
+	left:5px;
+	height:50px;
+	width:239px;
+	background:url(name.png) no-repeat;
+}
+#mblock .name input{
+	position:relative;
+	left:67px;
+	top:4px;
+	width:169px;
+	height:34px;
+}
+#mblock .pass{
+	position:relative;
+	left:5px;	
+	height:50px;
+	width:239px;
+	background:url(pass.png) no-repeat;
+}
+#mblock .pass input{
+	position:relative;
+	left:67px;
+	top:4px;
+	width:169px;
+	height:34px;
+}
+#mblock .join button{
+	clear:both;
+    width:127px;
+    height:44px;
+    overflow:hidden;
+}
+#mblock .join button img{
+	width:137px;
+	height:44px;
+}
+#mblock .dload{
+	margin-top:20px;
+	height:174px;
+	width:226px;
+	left:-28px;
+	position:relative;
+	background:url(dload.png) no-repeat;
+}
+#mblock .more{
+	margin-top:98px;
+	margin-left:55px;
+}
+#mcontent{
+	background:url(bottomright.png) bottom right no-repeat;
+}
+#footer{
+	position:relative;
+	width:100%;
+}

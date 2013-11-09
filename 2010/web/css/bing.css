@@ -1,0 +1,20 @@
+body{ font-size:12px; font-family:"ËÎÌו","Arial";}
+        .search{width:700px; height:550px;margin:10px auto; position:relative; background:#dfdfdf;border:1px #fff solid;background:url(weblog3.info.jpg) no-repeat;}
+        .spbox{position:absolute; width:38px;height:38px;border:1px #000 solid;-moz-opacity:0.6;opacity:0.6;filter:alpha(opacity=60);}
+        .spbox span{display:block;width:36px;height:36px;margin:1px;background:#000;}
+        #spbox1{left:130px;top:380px;}
+        #spbox2{left:185px;top:220px;}
+        #spbox3{left:350px;top:200px;}
+        #spbox4{left:430px;top:450px;}
+        
+        .ctbox{ position:absolute;padding:1px;width:196px;height:76px;border:1px #000 solid;-moz-opacity:0.6;opacity:0.6;filter:alpha(opacity=60);display:none;}
+        .ctbox div{width:196px;height:76px;background:#000;}
+        #ctbox1,#a_ct1{left:170px;top:380px;}
+        #ctbox2,#a_ct2{left:225px;top:220px;}
+        #ctbox3,#a_ct3{left:400px;top:200px;}
+        #ctbox4,#a_ct4{left:470px;top:450px;}
+        
+        .a_ct{position:absolute;width:180px;height:70px;overflow:hidden; color:#fff;text-decoration:none;padding:5px 10px; z-index:10; line-height:18px; display:none;}
+        a.a_ct:hover p{text-decoration:underline;}
+        .sp_ask{display:inline-block;width:100px;text-decoration:underline;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+        .sp_go{color:#FFA500; font-size:medium;}

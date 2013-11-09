@@ -1,0 +1,302 @@
+﻿body {
+	background: #FFF;
+	width: 100%;
+	height: 100%;
+	font-family:orbitron, '微软雅黑','Microsoft Yahei','Trebuchet MS', Arial, Sans-Serif;
+	font-size: 15px;
+	color: #474747;
+	line-height: 1.6em;
+}
+#menu{ 
+	position:absolute;
+	top:86%;
+	left:55.8%;
+	right:5%;
+	z-index:1200;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+}
+menu {
+-webkit-transition: all 1s ease-in-out;
+-moz-transition: all 1s ease-in-out;
+-o-transition: all 1s ease-in-out;
+}
+menu:hover {
+-webkit-transform: rotate(360deg) scale(1.2);
+-moz-transform: rotate(360deg) scale(1.2);
+-o-transform: rotate(360deg) scal(1.2);
+}
+#menu a{ 
+    background:#FFF; 
+	color:#67b2ff; 
+	border:#AAA 3px solid;  
+	text-decoration:none; 
+	padding:10px;
+	margin-right:10px; 
+	border-radius:10px; 
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px;
+}
+					
+#menu a:hover{ 
+     background:#67b2ff; 
+	 color:#FFF; 
+	 border:#FFF 3px solid; 
+	 text-decoration:none; 
+	 padding:10px;
+	 margin-right:10px; 
+	 border-radius:10px; 
+	 -moz-border-radius:10px; 
+	 -webkit-border-radius:10px;
+     -webkit-transform: rotate(360deg) scale(1.5);
+     -moz-transform: rotate(360deg) scale(1.5);
+     -o-transform: rotate(360deg) scale(1.5);
+}
+
+#menu a.selected{ 
+      background:#AAA; 
+	  color:#FFF; 
+	  border:#67b2ff 3px solid; 
+	  text-decoration:none; padding:10px;
+	  margin-right:20px; 
+	  border-radius:10px; 
+	  -moz-border-radius:10px; 
+	  -webkit-border-radius:10px;
+}
+#menu ul{
+      list-style:none;
+}
+#menu li{
+       list-style:none;
+       float:left; 
+}
+#mokfont{
+color:#666;
+writing-mode:tb-lr;
+clear:left;
+width:78%;
+left:10%;
+height:42%;
+text-align:left;
+font-family:xing,'宋体', '微软雅黑','Microsoft Yahei','Trebuchet MS', Arial, Sans-Serif;
+font-size: 18px;
+font-weight: bold;
+text-shadow: 4px 4px 4px #dff;
+letter-spacing: 0.056em;
+word-spacing: 0.069em;
+line-height: 1.23;
+overflow:hidden;
+z-index:999;
+}
+
+a:link, a:visited { color: #0066CC; text-decoration: none; font-weight: normal; } 
+a:active, a:hover { color: #FF0066; text-decoration:none; opacity:0.75;}
+
+.btn{
+font-weight:bold;
+color:#FFF;
+font-size:16px;
+padding:5px 19px;
+position:relavite;
+border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-webkit-border-radius:5px;
+-webkit-animation-name:greenPulse;
+-webkit-animation-duration:2s;
+-webkit-animation-iteration-count:infinite;
+text-shadow:0 -1px 1px rgba(0,0,0,0.25);
+background:#a7c743;
+background-image:-moz-linear-gradient(top,#a7c743,#91bd09);
+background-image:-webkit-gradient(linear,0% 0,0% 100%,from(#a7c743),to(#91bd09));
+box-shadow:0 1px 3px rgba(0,0,0,0.25);
+-moz-box-shadow:0 1px 3px rgba(0,0,0,0.25);
+-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.25);}
+/*按钮渐变效果 兼容谷歌浏览器*/
+@-webkit-keyframes greenPulse{
+from{background-color:#749a02;
+     -webkit-box-shadow:0 0 9px #333;
+    }
+50%{
+     background-color:#91bd09;
+     -webkit-box-shadow:0 0 18px #91bd09;
+}
+to{
+     background-color:#749a02;
+     -webkit-box-shadow:0 0 9px #333;}
+}
+h1, h2, h3, h4, h5 {
+	text-transform: uppercase;
+	font-family: Bliss, 'Myriad Pro', 'Trebuchet MS', Arial, Sans-Serif;
+	color: #a1c117;
+}
+h1 a, h2 a, h3 a, h4 a,
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited {
+	text-decoration: none;
+	color: #a1c117;
+}
+h1 {
+    color:#FFF;
+	font-size: 1.93em;
+	line-height: 1.2em;
+	margin: 8px 0 38px 0;
+}
+h2 
+{
+    color:Silver;
+	font-size: 1.47em;
+	line-height: 1.2em;
+	margin: 8px 0 15px 0;
+}
+h3 {
+	font-size: 1.20em;
+	line-height: 1.2em;
+	margin: 8px 0 15px 0;
+}
+h4 {
+	font-size: 1.07em;
+	line-height: 1.1em;
+	margin: 8px 0 15px 0;
+}
+h5 {
+	font-size: 1.07em;
+	line-height: 1.1em;
+	margin: 8px 0 15px 0;
+}
+a img {
+	border: 0;
+}
+ul {
+	padding-left: 40px;
+}
+pre {
+	background: #efefef;
+	border: 1px solid silver;
+	margin: 10px 0;
+	padding: 10px;
+	font-family: 'Courier New', Courier, monospace;
+}
+fgx{
+	font-family:flower;
+	font-size:18px;
+}
+#logo {
+	background: url(../images/logo.gif) 0 0 no-repeat;	z-index:1001;
+	width: 378px;
+	height: 121px;
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	text-indent: -9999px;
+}
+#container  {
+	min-width:900px;
+	padding-top:600px;
+	position:relavite;
+	width:100%;
+}
+#mainContent {
+	top:100px;
+	left:100px;
+	right:100px;
+	position:absolute;
+	padding: 40px 30px 30px 30px;
+}
+#mainContent h1 {
+	text-align: -9999px;
+	height: 0;
+	overflow: hidden;
+	margin: 0;
+}
+#content {
+	margin-right: 250px;
+}
+
+/*** Body Content ***/
+#wrapper	{
+	 width:61.8%; 
+	 height:800; 
+	 position:absolute; 
+	 top:11%; 
+	 left:13%;
+	 right:23%; 
+	 overflow:hidden; 
+	 z-index:1200;
+}
+#mask
+{
+	width:400%; 
+	height:100%; 
+	}
+
+.box 
+{
+     width:25%; 
+	 height:90%; 
+	 float:left; 
+	 }
+#footer {
+font-size: 12px;
+font-weight: 700;
+text-shadow: 2px 4px 7px #bbb;
+color: #303030;
+position: absolute;
+top:88%;
+left:20%;
+margin:0;
+width:60%;
+text-align:center;
+left:0;
+text-decoration: none;
+text-transform: none;
+z-index:1200;
+}
+.usual {
+  background-image: url(../images/zj.jpg);
+  background-repeat:no-repeat;
+  background-position:18px 20px;
+  color:#9F6;  
+  padding:15px 20px;
+  width:80%;
+  margin:8px auto;
+  z-index:2;
+  overflow:hidden;
+  text-align:center;
+  position:relavite;
+  width:419px;
+  height:236px;
+  opacity:0.75;
+}
+.usual li { list-style:none; float:left; }
+.usual ul a {
+  display:block;
+  padding:6px 10px;
+  text-decoration:none!important;
+  margin:1px;
+  margin-left:0;
+  font-family:'微软雅黑','Microsoft Yahei','Trebuchet MS', Arial, Sans-Serif;
+  font-size: 16px;
+  word-spacing: -0.2em;
+  color:#FFF;
+}
+.usual ul a:hover {
+  color:#FFF;
+  }
+.usual ul a.selected {
+  margin-bottom:0;
+  color:#000;
+  cursor:default;
+  }
+.usual div {
+  padding:10px 10px 8px 10px;
+  *padding-top:3px;
+  *margin-top:-15px;
+  clear:left;
+  font-family: '微软雅黑','Microsoft Yahei','Trebuchet MS', Arial, Sans-Serif;
+  font-size: 24px;
+}
+.usual div a { color:#000; font-weight:bold; }
+.usual div a{ 
+ font-weight:bold; 
+ }

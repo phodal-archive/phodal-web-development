@@ -1,0 +1,42 @@
+/*
+在网站用到的相关字体及效果
+*/
+
+moqi_en {
+  font-family: 'Lobster', serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: 4px 4px 4px #bbb;
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.039em;
+  word-spacing: 0em;
+  line-height: 1em;
+}
+moqi
+{
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: 4px 4px 4px #bbb;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0em;
+  word-spacing: 0em;
+  line-height: 1em;
+}
+
+
+moqi_body
+{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: 4px 4px 4px #bbb;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0.1em;
+  word-spacing: 0.1em;
+  line-height: 1.2em;
+}
